@@ -1,0 +1,166 @@
+@import url('https://fonts.googleapis.com/css2?family=Overpass:wght@400;700&display=swap');
+
+:root {
+  --Orange: hsl(25, 97%, 53%);
+  --White: hsl(0, 0%, 100%);
+  --Light-Grey: hsl(217, 12%, 63%);
+  --Medium-Grey: hsl(216, 12%, 54%);
+  --Dark-Blue: hsl(213, 19%, 18%);
+  --Very-Dark-Blue: hsl(216, 12%, 8%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Overpass', sans-serif;
+  background-color: var(--Very-Dark-Blue);
+}
+
+.container {
+  height: 100vh; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  background-color: var(--Dark-Blue);
+  padding: 2em;
+  border-radius: 1em;
+  max-width: 330px;
+  animation: show 1s ease;
+}
+
+@keyframes show {
+  0% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+}
+
+.card img {
+  background-color: rgb(73, 73, 73);
+  padding: 10px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+.card h2 {
+  font-weight: 700;
+  color: var(--White);
+  margin-bottom: 10px;
+}
+
+.card p {
+  color: var(--Medium-Grey);
+  margin-bottom: 20px;
+  font-weight: 400;
+  font-size: .9em;
+  line-height: 1.5rem;
+}
+
+.card .card__rating {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.card__rating .input {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.input .btn {
+  color: var(--Light-Grey);
+  background-color: rgba(95, 95, 95, 0.349);
+  border: none;
+  outline: none;
+  padding: 1.2em;
+  border-radius: 50%;
+  font-size: 1em;
+  font-weight: 700;
+}
+
+.card__rating button[type="button"] {
+  background-color: var(--Orange);
+  padding: 13px 0px;
+  border-radius: 2.5em;
+  border: none;
+  outline: none;
+  color: var(--White);
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 1em;
+  letter-spacing: .2em;
+}
+
+.input .btn-active {
+  background-color: var(--Orange);
+  color: var(--White);
+}  
+
+/* card thank you */
+
+.card .center {
+  text-align: center;
+  animation: show .9s ease-in-out;
+}
+
+@keyframes show {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+}
+
+.center .thank-img {
+  background: none;
+  border-radius: 0;
+}
+
+.center .select {
+  width: max-content;
+  color: var(--Orange);
+  background-color: rgba(95, 95, 95, 0.349);
+  border-radius: 3em;
+  padding: 9px 10px;
+  margin: 0 auto;
+  font-size: .9em;
+  font-weight: 400;
+  letter-spacing: .1em;
+}
+
+.center h3 {
+  margin: 25px 0px 10px 0px;
+  font-size: 1.7em;
+  color: var(--White);
+}
+
+@media only screen and (min-width: 500px) {
+  .input .btn:hover {
+    background-color: var(--Medium-Grey);
+    color: #000;
+    cursor: pointer;
+  }
+
+  .card__rating button[type="button"] {
+    cursor: pointer;
+  }
+
+  .card__rating button[type="button"]:hover {
+    background-color: var(--White);
+    color: var(--Orange);
+  }
+
+  .input .btn-active:hover {
+    background-color: var(--Orange);
+    color: var(--White);
+  }
+}
